@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nalumi Privacy Policy</title>
+  <meta name="description" content="Nalumi collects no data. This policy explains what happens to your data when you use the app.">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a class="wordmark" href="./">
+      <img src="assets/icon.png" alt="" width="30" height="30">
+      <span>Nalumi</span>
+    </a>
+    <div class="nav-links">
+      <a href="./#showcase">The app</a>
+      <a href="./#privacy">Privacy</a>
+      <a class="nav-cta" href="mailto:help@geotoolkit.online?subject=Nalumi%20beta%20access&body=Hi%20-%20I%27d%20like%20to%20join%20the%20Nalumi%20beta.%20My%20Google%20account%20email%20is%3A%20">Join the beta</a>
+    </div>
+  </nav>
+
+  <main class="policy">
+    <h1>Privacy Policy</h1>
+    <p class="policy-date">Effective date: November 24, 2026</p>
+
+    <p>Nalumi (&ldquo;the app&rdquo;) is an Android chat client for large language model (LLM) servers that you run or choose yourself. This policy explains what happens to your data when you use it.</p>
+
+    <h2>What Nalumi does</h2>
+    <p>Nalumi lets you chat with AI models served by <strong>your own servers</strong> — self-hosted LLM backends such as Ollama, vLLM, LM Studio, llama.cpp, or LiteLLM. You configure the server address; the app talks to it directly from your device.</p>
+
+    <h2>Data we collect: none</h2>
+    <p>The developer of Nalumi <strong>does not collect, transmit, receive, store, or share any of your data</strong>. Specifically:</p>
+    <ul>
+      <li>No analytics or telemetry</li>
+      <li>No advertising or ad SDKs</li>
+      <li>No accounts, sign-ins, or identifiers</li>
+      <li>No crash reporting services</li>
+      <li>No data is sent to any server controlled by the developer</li>
+    </ul>
+
+    <h2>Where your data goes</h2>
+    <p><strong>Your messages stay on your device.</strong> Conversations, server profiles, and settings are stored in the app&rsquo;s local database on your phone. They never leave your device except as described below.</p>
+    <p><strong>Messages are sent to the server you configure.</strong> When you send a chat message, its content (and any attached images) is transmitted <strong>directly from your device to the LLM server address you entered</strong>. That server is operated by you or a third party you chose — the developer has no access to it and never sees this traffic.</p>
+    <p><strong>Network security note:</strong> the app allows plain HTTP connections so you can use servers on your local network (for example, an Ollama instance at <code>http://192.168.x.x</code>). Traffic to an <code>http://</code> server is not encrypted in transit. Use <code>https://</code> server addresses if you connect over untrusted networks.</p>
+
+    <h2>Payments (optional tips)</h2>
+    <p>Nalumi is free. If you choose to leave an optional tip, the payment is processed entirely by <strong>Google Play</strong>. The developer never sees your payment method, billing details, or identity; the app only receives an opaque purchase token to show a thank-you. Tips are not linked to your conversations, settings, or server profiles in any way.</p>
+
+    <h2>Android backups</h2>
+    <p>Nalumi allows Android&rsquo;s system backup feature. If you have device backup enabled, Android may copy the app&rsquo;s local database (which includes your conversations and server settings, including any API keys you stored in profiles) to your own Google account&rsquo;s backup storage. This is controlled by your device&rsquo;s backup settings, not by the app or the developer.</p>
+
+    <h2>Deleting your data</h2>
+    <p>All app data lives on your device. To delete everything: uninstall the app, or use Android Settings &rarr; Apps &rarr; Nalumi &rarr; <strong>Clear data</strong> / <strong>Clear storage</strong>.</p>
+
+    <h2>Permissions</h2>
+    <p>The app requests the <strong>Internet</strong> permission solely to communicate with the LLM server you configure, and (on Android 13+) media/image access solely to attach images you explicitly choose to messages.</p>
+
+    <h2>Children</h2>
+    <p>Nalumi is not directed at children under 13 and collects no data from any user of any age.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the updated version will be published at this address with a new effective date.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy: <strong><a href="mailto:help@geotoolkit.online">help@geotoolkit.online</a></strong></p>
+
+    <p class="policy-close">Nalumi is developed by wde.dev.</p>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-name">Nalumi</div>
+      <p class="footer-meaning">From <em>nalar</em>, reasoning, and <em>umi</em>, sea — a sea of reasoning.</p>
+      <div class="footer-links">
+        <a href="./">Home</a>
+        <a href="mailto:help@geotoolkit.online">help@geotoolkit.online</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

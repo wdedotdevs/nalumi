@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nalumi — chat with your own AI</title>
+  <meta name="description" content="Nalumi is an Android chat app for the LLM servers you host yourself — Ollama, LM Studio, vLLM, llama.cpp. Conversations stay on your phone and go only to your server.">
+  <meta property="og:title" content="Nalumi — chat with your own AI">
+  <meta property="og:description" content="An Android chat app for self-hosted LLM servers. No accounts, no analytics, no ads.">
+  <meta property="og:image" content="https://wdedotdevs.github.io/nalumi/assets/feature.png">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a class="wordmark" href="./">
+      <img src="assets/icon.png" alt="" width="30" height="30">
+      <span>Nalumi</span>
+    </a>
+    <div class="nav-links">
+      <a href="#showcase">The app</a>
+      <a href="privacy-policy.html">Privacy</a>
+      <a class="nav-cta" href="mailto:help@geotoolkit.online?subject=Nalumi%20beta%20access&body=Hi%20-%20I%27d%20like%20to%20join%20the%20Nalumi%20beta.%20My%20Google%20account%20email%20is%3A%20">Join the beta</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>Chat with your own&nbsp;AI.</h1>
+        <p class="lede">
+          Nalumi is an Android app that talks to the LLM servers you host —
+          Ollama, LM Studio, vLLM, llama.cpp. Conversations stay on your
+          phone and go only to the server you choose.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="mailto:help@geotoolkit.online?subject=Nalumi%20beta%20access&body=Hi%20-%20I%27d%20like%20to%20join%20the%20Nalumi%20beta.%20My%20Google%20account%20email%20is%3A%20">Join the beta</a>
+          <a class="link" href="#showcase">See the app</a>
+        </div>
+        <p class="hero-foot">Free &middot; No ads &middot; No tracking &middot; About 3&nbsp;MB</p>
+      </div>
+
+      <div class="hero-phone">
+        <div class="phone" data-ui>
+          <div class="phone-top">
+            <span class="phone-model">qwen3:8b &middot; ollama</span>
+          </div>
+          <div class="chat" id="demo-chat">
+            <div class="msg user">
+              <p>Summarize quantization in one paragraph.</p>
+            </div>
+            <div class="msg assistant">
+              <p><span class="stream" id="demo-stream">Quantization stores a model&rsquo;s weights with fewer bits — 16-bit floats become roughly 4-bit integers. The model shrinks about fourfold, so an 8&nbsp;billion-parameter model drops from ~16&nbsp;GB to ~4.7&nbsp;GB and fits on a consumer GPU. Quality dips slightly; Q4_K_M is the usual sweet spot.</span></p>
+              <p class="msg-stats" id="demo-stats">127 tokens &middot; 41.6 tok/s</p>
+            </div>
+          </div>
+          <div class="phone-bottom">
+            <span class="phone-hint" id="demo-hint">Ask anything&hellip;</span>
+          </div>
+        </div>
+        <button class="replay" id="demo-replay" type="button" hidden>Replay</button>
+      </div>
+    </section>
+
+    <!-- ============ PROVIDERS ============ -->
+    <section class="providers" id="providers">
+      <h2>Works with what you already&nbsp;run.</h2>
+      <p class="section-lede">
+        Point Nalumi at any server on your LAN or VPN — it speaks Ollama&rsquo;s
+        native protocol and any OpenAI-compatible API, with custom headers
+        for the rest.
+      </p>
+      <div class="provider-rows">
+        <div class="provider">
+          <div class="provider-name">Ollama</div>
+          <p>Supported natively and through its OpenAI-compatible endpoint.</p>
+          <code>http://localhost:11434</code>
+        </div>
+        <div class="provider">
+          <div class="provider-name">LM Studio</div>
+          <p>Local server mode, straight from the app.</p>
+          <code>http://localhost:1234/v1</code>
+        </div>
+        <div class="provider">
+          <div class="provider-name">vLLM</div>
+          <p>Production-grade serving on your own box.</p>
+          <code>http://localhost:8000/v1</code>
+        </div>
+        <div class="provider">
+          <div class="provider-name">llama.cpp</div>
+          <p>llama-server on anything from a laptop to a homelab GPU rig.</p>
+          <code>http://localhost:8080/v1</code>
+        </div>
+        <div class="provider">
+          <div class="provider-name">LiteLLM</div>
+          <p>Route to many models behind one proxy.</p>
+          <code>http://localhost:4000/v1</code>
+        </div>
+        <div class="provider">
+          <div class="provider-name">Anything else</div>
+          <p>Any OpenAI-compatible endpoint, with custom headers and API keys per profile.</p>
+          <code>https://your-server/v1</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRIVACY ============ -->
+    <section class="privacy" id="privacy">
+      <h2>Nothing leaves your&nbsp;device.</h2>
+      <p class="privacy-statement">
+        Nalumi has no accounts, no analytics and no ads. Your messages are
+        sent only to the server address you configure — the developer never
+        sees them, or anything else. Uninstalling deletes everything; there
+        is no cloud copy.
+      </p>
+      <ul class="privacy-facts">
+        <li><strong>No accounts</strong> — nothing to sign up for</li>
+        <li><strong>No analytics</strong> — not a single tracker</li>
+        <li><strong>No ads</strong> — your screen is yours</li>
+      </ul>
+      <a class="privacy-link" href="privacy-policy.html">Read the privacy policy</a>
+    </section>
+
+    <!-- ============ SHOWCASE ============ -->
+    <section class="showcase" id="showcase">
+      <h2>A real chat&nbsp;client.</h2>
+      <p class="section-lede">
+        Not a wrapper around a web view — a native Android app, built with
+        Jetpack Compose, that treats your model like a first-class citizen.
+      </p>
+      <div class="shots">
+        <figure class="shot shot-large">
+          <img src="assets/01-chat-midstream.png" alt="Nalumi streaming an answer, with token speed shown under the response" loading="lazy">
+          <figcaption>Streaming answers, with live token stats</figcaption>
+        </figure>
+        <div class="shot-stack">
+          <figure class="shot">
+            <img src="assets/03-chat-code.png" alt="A code block in a Nalumi answer, with a copy button" loading="lazy">
+            <figcaption>Markdown and code, with copy</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/04-conversations.png" alt="Nalumi's conversation list with automatically generated titles" loading="lazy">
+            <figcaption>Conversations, titled automatically</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="features" id="features">
+      <h2>Built like a tool, not a&nbsp;platform.</h2>
+      <dl class="feature-list">
+        <div><dt>Streaming responses</dt><dd>Answers arrive token by token, with speed and token counts — so you know your server is alive.</dd></div>
+        <div><dt>Markdown &amp; code</dt><dd>Formatted answers, code blocks with a copy button, no mangled tables or lists.</dd></div>
+        <div><dt>Auto-titled conversations</dt><dd>Every chat is named from its first exchange, using your own model.</dd></div>
+        <div><dt>Search</dt><dd>Find any conversation from the list, the moment you need it.</dd></div>
+        <div><dt>Image attachments</dt><dd>Send photos to vision models, straight from your gallery.</dd></div>
+        <div><dt>Custom headers</dt><dd>Authorization overrides, X-Title, anything your endpoint expects.</dd></div>
+        <div><dt>Server profiles</dt><dd>Keep your desktop rig, a VPN box and a hosted endpoint side by side.</dd></div>
+        <div><dt>Light, dark or system</dt><dd>The theme follows your phone or your taste.</dd></div>
+        <div><dt>Tiny</dt><dd>About 3&nbsp;MB to download. It does one job and stays out of the way.</dd></div>
+      </dl>
+    </section>
+
+    <!-- ============ FREE / BETA ============ -->
+    <section class="free" id="free">
+      <h2>Free, with an optional&nbsp;tip.</h2>
+      <p class="section-lede">
+        Nalumi costs nothing and shows no ads. If it earns a place on your
+        home screen, you can leave a tip inside the app — processed by
+        Google Play, never linked to your data.
+      </p>
+      <div class="free-actions">
+        <a class="btn" href="mailto:help@geotoolkit.online?subject=Nalumi%20beta%20access&body=Hi%20-%20I%27d%20like%20to%20join%20the%20Nalumi%20beta.%20My%20Google%20account%20email%20is%3A%20">Join the beta</a>
+        <p class="free-note">Nalumi is in closed testing on Google Play.<br>Email us for an invite — and watch this space.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-name">Nalumi</div>
+    <p class="footer-meaning">From <em>nalar</em>, reasoning, and <em>umi</em>, sea — a sea of reasoning.</p>
+    <div class="footer-links">
+      <a href="privacy-policy.html">Privacy policy</a>
+      <a href="mailto:help@geotoolkit.online">help@geotoolkit.online</a>
+    </div>
+    <p class="footer-credit">Built by wde.dev</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
